@@ -9,4 +9,18 @@ November 2025.&lt;br&gt;
 Batuhan Mekiker and Mike P. Wittie
 &amp;ldquo;Evaluating Text-to-Speech and Audio Codec Performance for Voice Communication in Resource-Constrained Networks&amp;rdquo;
 in &lt;em&gt;IEEE International Conference on Wireless and Mobile Computing, Networking and Communications (WiMob)&lt;/em&gt;, October 2024.&lt;br&gt;
-&lt;a href="https://mwittie.io/publications/Mekiker24TextToSpeech.pdf" target="_blank"&gt;paper&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>
+&lt;a href="https://mwittie.io/publications/Mekiker24TextToSpeech.pdf" target="_blank"&gt;paper&lt;/a&gt;&lt;/p&gt;</description></item><item><title>About Me</title><link>https://mwittie.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mwittie.io/about/</guid><description>&lt;p&gt;I build secure, high-performance distributed systems.&lt;/p&gt;
+&lt;p&gt;I tend to understand complex systems in terms of primitives that compete in a
+Darwinian sense for inclusion in the architectures we construct.
+The best primitives survive because they are simple, composable, measurable,
+and defensible.
+I enjoy discovering, building, benchmarking, and advocating for the adoption
+of strong primitives to overcome technical and economic constraints in real
+systems.&lt;/p&gt;
+&lt;p&gt;While generative AI will continue to compress the cost of producing software,
+durable primitives, especially those protected by intellectual property, hardware
+constraints, or network effects, will remain the essential building blocks of
+scalable systems.
+I believe verifiable computing technologies, such as those we developed at
+Blocky, are foundational for building large networks of AI-orchestrated services
+that can be trusted, composed, and economically sustained.&lt;/p&gt;</description></item></channel></rss>
