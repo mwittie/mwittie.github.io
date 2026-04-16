@@ -399,7 +399,7 @@ Here <code>example_test.go</code> contains a package <code>Example()</code> test
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span></code></pre></div><p>which specifies that our earlier <code>main()</code> function should output <code>hello, world</code>.
 Running</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>cd</span> go-hello-world <span class=o>&amp;&amp;</span> go <span class=nb>test</span> --count<span class=o>=</span><span class=m>1</span> -run Example .
-</span></span></code></pre></div><p>outputs</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>ok  	github.com/mwittie/go-hello-world	0.003s
+</span></span></code></pre></div><p>outputs</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>ok  	github.com/mwittie/go-hello-world	0.002s
 </span></span></code></pre></div><p>The challenge is that neither of these approaches works well for shell-based
 procedures.
 At Blocky, our documentation described the use of our CLI tool, <code>bky-as</code>, and so
