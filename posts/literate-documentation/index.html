@@ -1,0 +1,497 @@
+<!doctype html><html lang=en-us dir=ltr class=scroll-smooth data-default-appearance=light data-auto-appearance=true><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=theme-color content="#FFFFFF"><title>Literate Documentation &#183; Home</title><meta name=title content="Literate Documentation &#183; Home"><script type=text/javascript src=https://mwittie.io/js/appearance.min.8a082f81b27f3cb2ee528df0b0bdc39787034cf2cc34d4669fbc9977c929023c.js integrity="sha256-iggvgbJ/PLLuUo3wsL3Dl4cDTPLMNNRmn7yZd8kpAjw="></script><link type=text/css rel=stylesheet href=https://mwittie.io/css/main.bundle.min.61ee0b587b534d5de6a952700dd93fa965b0c0b62ff892f46fbfd0161572145f.css integrity="sha256-Ye4LWHtTTV3mqVJwDdk/qWWwwLYv+JL0b7/QFhVyFF8="><script defer type=text/javascript id=script-bundle src=https://mwittie.io/js/main.bundle.min.167efd96c29259046e711c52c0db66536f497aad73a774cd6f28fc408f2d2688.js integrity="sha256-Fn79lsKSWQRucRxSwNtmU29Jeq1zp3TNbyj8QI8tJog=" data-copy=Copy data-copied=Copied></script><meta name=description content="
+      
+        Documentation drifts because it isn&rsquo;t held to the same integrity standards as code. Literate documentation (co-located prose and executable artifacts, build-time execution, shared variables, output assertions, and reproducible environments) a continuously verified contract between engineers and users over documented system behavior.
+      
+    "><link rel=canonical href=https://mwittie.io/posts/literate-documentation/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><meta property="og:url" content="https://mwittie.io/posts/literate-documentation/"><meta property="og:site_name" content="Home"><meta property="og:title" content="Literate Documentation"><meta property="og:description" content="Documentation drifts because it isn’t held to the same integrity standards as code. Literate documentation (co-located prose and executable artifacts, build-time execution, shared variables, output assertions, and reproducible environments) a continuously verified contract between engineers and users over documented system behavior."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2026-02-09T00:00:00+00:00"><meta property="article:modified_time" content="2026-02-09T00:00:00+00:00"><meta property="og:image" content="https://mwittie.io/posts/literate-documentation/feature.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://mwittie.io/posts/literate-documentation/feature.png"><meta name=twitter:title content="Literate Documentation"><meta name=twitter:description content="Documentation drifts because it isn’t held to the same integrity standards as code. Literate documentation (co-located prose and executable artifacts, build-time execution, shared variables, output assertions, and reproducible environments) a continuously verified contract between engineers and users over documented system behavior."><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","articleSection":"Posts","name":"Literate Documentation","headline":"Literate Documentation","abstract":"Documentation drifts because it isn\u0026rsquo;t held to the same integrity standards as code. Literate documentation (co-located prose and executable artifacts, build-time execution, shared variables, output assertions, and reproducible environments) a continuously verified contract between engineers and users over documented system behavior.","inLanguage":"en-us","url":"https:\/\/mwittie.io\/posts\/literate-documentation\/","author":{"@type":"Person","name":"Mike Wittie, PhD"},"copyrightYear":"2026","dateCreated":"2026-02-09T00:00:00\u002b00:00","datePublished":"2026-02-09T00:00:00\u002b00:00","dateModified":"2026-02-09T00:00:00\u002b00:00","mainEntityOfPage":"true","wordCount":"3923"}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://mwittie.io/","name":"Mike Wittie's Website","position":1},{"@type":"ListItem","item":"https://mwittie.io/posts/","name":"Posts","position":2},{"@type":"ListItem","name":"Literate Documentation","position":3}]}</script><meta name=author content="Mike Wittie, PhD"><script defer type=text/javascript src=https://mwittie.io/js/mermaid.bundle.c3c0c404b4719f7b9c4e7c8e60401d5a25dd35c933ae2b16e8f8810f6b447bce.js integrity="sha256-w8DEBLRxn3ucTnyOYEAdWiXdNckzrisW6PiBD2tEe84="></script><link type=text/css rel=stylesheet href=https://mwittie.io/lib/katex/katex.min.e189fd0238811989c3646dcebda8bc0cfb1ec791b79e60cf9d18f05a49c8a016.css integrity="sha256-4Yn9AjiBGYnDZG3Ovai8DPsex5G3nmDPnRjwWknIoBY="><script defer src=https://mwittie.io/lib/katex/katex.min.6b909443e6c8f6e5d24cc4872fe909a54770762047ae95e3f34f55ec2e6f6c3a.js integrity="sha256-a5CUQ+bI9uXSTMSHL+kJpUdwdiBHrpXj809V7C5vbDo="></script><script defer src=https://mwittie.io/lib/katex/auto-render.min.bb53eb953394531aae36fdd537065c4244eb8542901a3ce914601d932675b8ac.js integrity="sha256-u1PrlTOUUxquNv3VNwZcQkTrhUKQGjzpFGAdkyZ1uKw=" onload='renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:!0},{left:"$$",right:"$$",display:!0},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1})'></script></head><body class="m-auto flex h-screen max-w-7xl flex-col bg-neutral px-6 text-lg leading-7 text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32"><div id=the-top class="absolute flex self-center"><a class="-translate-y-8 rounded-b-lg bg-primary-200 px-3 py-1 text-sm focus:translate-y-0 dark:bg-neutral-600" href=#main-content><span class="pe-2 font-bold text-primary-600 dark:text-primary-400">&darr;</span>Skip to main content</a></div><header class="py-6 font-semibold text-neutral-900 dark:text-neutral sm:py-10 print:hidden"><nav class="flex items-start justify-between sm:items-center"><div class="flex flex-row items-center"><a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2" rel=me href=/>Home</a></div><ul class="flex list-none flex-col text-end sm:flex-row"><li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5"><a href=/about/ title="About Me"><span class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2">About me</span></a></li><li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5"><a href=/resume title><span class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2">Resume</span></a></li><li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5"><a href=/posts/ title=Posts><span class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2">Posts</span></a></li><li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5"><a href=/publications/ title=Publications><span class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2">Publications</span></a></li><li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5"><button id=search-button-1 title="Search (/)">
+<span class="group-dark:hover:text-primary-400 transition-colors group-hover:text-primary-600"><span class="icon relative inline-block px-1 align-text-bottom"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7 405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9.0 208 0S0 93.1.0 208s93.1 208 208 208c48.3.0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9.0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7.0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7.0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span></span><span class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"></span></button></li></ul></nav></header><div class="relative flex grow flex-col"><main id=main-content class=grow><article><header class=max-w-prose><ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden"><li class="hidden inline"><a class="dark:underline-neutral-600 decoration-neutral-300 hover:underline" href=https://mwittie.io/>Mike Wittie's website</a><span class="px-1 text-primary-500">/</span></li><li class=inline><a class="dark:underline-neutral-600 decoration-neutral-300 hover:underline" href=https://mwittie.io/posts/>Posts</a><span class="px-1 text-primary-500">/</span></li><li class="hidden inline"><a class="dark:underline-neutral-600 decoration-neutral-300 hover:underline" href=https://mwittie.io/posts/literate-documentation/>Literate Documentation</a><span class="px-1 text-primary-500">/</span></li></ol><h1 class="mb-8 mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">Literate Documentation</h1><div class="mb-10 text-base text-neutral-500 dark:text-neutral-400 print:hidden"><div class="flex flex-row flex-wrap items-center"><time datetime="2026-02-09 00:00:00 +0000 UTC">February 9, 2026</time><span class="px-2 text-primary-500">&#183;</span><span title="Reading time">19 mins</span></div></div><div class=prose><picture class="mb-6 rounded-md"><source srcset="https://mwittie.io/posts/literate-documentation/feature_hu_3eb63b46a76f6818.webp 330w,https://mwittie.io/posts/literate-documentation/feature_hu_3d3d6f01e63c200e.webp 660w
+,https://mwittie.io/posts/literate-documentation/feature_hu_ef418af55455e9f0.webp 1024w
+,https://mwittie.io/posts/literate-documentation/feature_hu_206e95c7cfca2c5e.webp 1320w" sizes=100vw type=image/webp><img width=1536 height=616 class="mb-6 rounded-md" src=https://mwittie.io/posts/literate-documentation/feature_hu_bb1afeb7f734300a.png srcset="https://mwittie.io/posts/literate-documentation/feature_hu_c3482891724a61d1.png 330w,https://mwittie.io/posts/literate-documentation/feature_hu_bb1afeb7f734300a.png 660w
+,https://mwittie.io/posts/literate-documentation/feature_hu_6203bdfeec5763a8.png 1024w
+,https://mwittie.io/posts/literate-documentation/feature_hu_d881a2d28e5b4cba.png 1320w" sizes=100vw></picture></div></header><section class="prose mt-0 flex max-w-full flex-col dark:prose-invert lg:flex-row"><div class="order-first px-0 lg:order-last lg:max-w-xs lg:ps-8"><div class="toc pe-5 lg:sticky lg:top-10 print:hidden"><details open class="-ms-5 mt-0 overflow-hidden rounded-lg ps-5"><summary class="block cursor-pointer bg-neutral-100 py-1 ps-5 text-lg font-semibold text-neutral-800 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">Table of Contents</summary><div class="border-s border-dotted border-neutral-300 py-2 ps-5 dark:border-neutral-600"><nav id=TableOfContents><ul><li><a href=#when-documentation-is-the-problem>When documentation is the problem</a><ul><li><a href=#how-good-documentation-goes-bad>How good documentation goes bad</a></li><li><a href=#a-hopeful-interlude>A hopeful interlude</a></li></ul></li><li><a href=#literate-documentation>Literate documentation</a></li><li><a href=#what-is-possible-today>What is possible today?</a><ul><li><a href=#co-located-prose-and-executable-artifacts>Co-located prose and executable artifacts</a></li><li><a href=#build-time-execution-and-output-capture>Build-time execution and output capture</a><ul><li><a href=#executable-shell>Executable shell</a><ul><li><a href=#transitional-text>Transitional text</a></li><li><a href=#suppressing-command-rendering>Suppressing command rendering</a></li><li><a href=#suppressing-output-rendering>Suppressing output rendering</a></li><li><a href=#failures-and-debugging>Failures and Debugging</a></li><li><a href=#stateful-procedures>Stateful procedures</a></li></ul></li><li><a href=#file-inclusions-and-extraction>File inclusions and extraction</a></li><li><a href=#other-runtimes>Other runtimes</a></li></ul></li><li><a href=#shared-variables-across-text-and-execution-contexts>Shared variables across text and execution contexts</a></li><li><a href=#assertion-of-expected-outputs>Assertion of expected outputs</a></li><li><a href=#reproducible-pinned-execution-environments>Reproducible, pinned execution environments</a></li></ul></li><li><a href=#conclusion>Conclusion</a></li></ul></nav></div></details></div></div><div class="min-h-0 min-w-0 max-w-prose grow"><h1 id=when-documentation-is-the-problem class="relative group">When documentation is the problem <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#when-documentation-is-the-problem aria-label=Anchor>#</a></span></h1><p>When a software tool piques my curiosity, I want to try it.
+My path to a working example could be short and sweet: install, run, see it
+work.</p><p>Not infrequently though I&rsquo;m met with inconsistent terms, missing prerequisites,
+outdated command flags, or examples that no longer match the current release.
+Nothing catastrophic.
+Just a little drift over here, a little rot over there.
+Individually, these are minor issues, but collectively, they interrupt my
+momentum.
+Instead of validating the tool, I&rsquo;m debugging the documentation.</p><p>I&rsquo;m patient to a degree, but if the initial experience becomes an
+exercise in reconciliation of documentation with reality, my attention shifts
+elsewhere and rarely returns.</p><p>This is an avoidable loss.
+A team may spend months to build the software, launch it, and attract a
+motivated user, only to discourage that user at the point of adoption.</p><h2 id=how-good-documentation-goes-bad class="relative group">How good documentation goes bad <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#how-good-documentation-goes-bad aria-label=Anchor>#</a></span></h2><p>No serious project sets out to produce poor documentation.
+The issue is not disinterest or incompetence; it is entropy.
+Poor documentation is not a moral failing, but a systems failure.</p><p>Software features are gated by tests. Engineers update unit and integration
+tests alongside their changes, and those tests must pass in continuous
+integration (CI) before anything ships.</p><p>Documentation rarely benefits from equivalent enforcement.
+A new feature might be documented, but what ensures it hasn&rsquo;t broken an existing
+&ldquo;hello, world&rdquo; flow or another end-to-end example?
+Will the documenters rerun those examples?
+Will they rerun them in a clean environment?</p><p>In practice, gaps emerge and users compensate by burning credits, time, and
+attention to bridge them.</p><h2 id=a-hopeful-interlude class="relative group">A hopeful interlude <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#a-hopeful-interlude aria-label=Anchor>#</a></span></h2><p>A few years ago I needed to document a computation so others could verify the
+results.
+Remembering my school days with
+<a href=https://www.maplesoft.com/products/maple/history/pastversions_maple6.aspx target=_blank rel=noreferrer>Maple</a>,
+I gave
+<a href=https://colab.research.google.com/ target=_blank rel=noreferrer>Google Colab</a>
+a try.</p><p>Colab allowed me to interleave prose and executable code behind my
+<a href=https://colab.research.google.com/drive/1ZapogFjC314uE2kQfooSUj4fvzIqDHUU target=_blank rel=noreferrer>computation</a>
+in a single document.
+More importantly, Colab hosted the document and its environment.
+As a result, executing the document created the same materialized view of the
+computation for me and my readers.</p><p>This raised a broader question.
+Could we create materialized views not just for a computation, but for any
+procedure described by documentation?</p><p>I loved this idea – our users and engineers did not.
+Users were confused by all the Python needed to make a Colab notebook run.
+They just wanted a clean rendering of correct instructions.
+Our engineers were reluctant to integrate a hosted notebook into development,
+testing, and release pipelines.</p><p>Still, the core insight remained.
+If explanation, code, and environment are fixed and validated during the
+release process, the resulting artifact can enforce documentation consistency
+and integrity.
+It becomes a materialized view of the system, aligning the realities of
+engineers, documenters, and users alike.</p><h1 id=literate-documentation class="relative group">Literate documentation <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#literate-documentation aria-label=Anchor>#</a></span></h1><p>In leading
+<a href=https://docs.blocky.rocks/ target=_blank rel=noreferrer>documentation efforts at Blocky</a>
+and evaluating our competitors&rsquo; software through their documentation,
+I noticed that most projects attempt to help users to:</p><ul><li>Download, install, and configure the software</li><li>Run a &ldquo;hello, world&rdquo; example</li><li>Work through specific workflows showcasing advanced features</li><li>Understand the system&rsquo;s operational envelope of inputs, options, and outputs</li></ul><p>These are not merely descriptions, but procedures with claims about system
+behavior.
+We could look at documentation as a shared <strong>contract</strong> between users and
+engineers over system behavior.
+That contract maintains consistency (of terminology) and integrity (of
+functionality) as the software evolves.</p><p>What is needed is a method for developing and verifying these procedures for
+consistency and integrity, not occasionally, but continuously and with the same
+rigor as the software, whose behavior these procedures describe.</p><p>In thinking about how to achieve this in my company, we started to group the
+following concepts under the umbrella term of <strong>literate documentation</strong>.</p><ul><li><p><a href=#co-located-prose-and-executable-artifacts><strong>Co-located prose and executable artifacts</strong></a><br>Based on <a href=http://www.literateprogramming.com/knuthweb.pdf target=_blank rel=noreferrer>literate programming</a>,
+where explanation and action live in the same source file, reducing drift
+between what is said and what is done.</p></li><li><p><a href=#build-time-execution-and-output-capture><strong>Build-time execution and output capture</strong></a><br>Inspired by
+<a href=https://reference.wolfram.com/legacy/v1/contents/tour.pdf target=_blank rel=noreferrer>notebook programming</a>,
+where examples are executed as part of the build, and their outputs are
+materialized directly into the rendered documentation.</p></li><li><p><a href=#shared-variables-across-text-and-execution-contexts><strong>Shared variables across text and execution contexts</strong></a><br>Drawing from
+<a href=https://www.gnu.org/software/m4/manual/m4.html#History target=_blank rel=noreferrer>macro systems</a>
+and more recently
+<a href=https://dn720002.ca.archive.org/0/items/B-001-002-139/Donald_Knuth_-_The_Tex_Book.pdf target=_blank rel=noreferrer>tex</a>,
+where flags, versions, paths, and identifiers are defined once and reused.</p></li><li><p><a href=#assertion-of-expected-outputs><strong>Assertion of expected outputs</strong></a><br>Borrowed from
+<a href=https://docs.python.org/3/whatsnew/2.1.html#new-and-improved-modules target=_blank rel=noreferrer>Python doctests</a>,
+where examples do not merely run, but validate that observed behavior matches
+declared expectations.</p></li><li><p><a href=#reproducible-pinned-execution-environments><strong>Reproducible, pinned execution environments</strong></a><br>Based on <a href=https://edolstra.github.io/pubs/phd-thesis.pdf target=_blank rel=noreferrer>nix</a>,
+where the documentation executes in a controlled environment that mirrors
+release conditions.</p></li></ul><p>Under a continuous integration (CI) authority, literate documentation is
+executed and verified as a part of the build process.
+Failures block release, which makes documentation subject to the same release
+safeguards as production code.</p><details style=margin-bottom:1.5rem><summary>Literate documentation sits alongside several established practices,
+such as docs-as-code, Behavior-driven development (BDD), and acceptance testing,
+extending them in a specific direction.</summary><p>Docs-as-code brings documentation into version control and modern
+review workflows.
+Literate documentation adds build-time execution and verification,
+ensuring that examples and procedures remain mechanically aligned
+with the released system.</p><p>BDD and end-to-end testing validate system
+behavior from a product perspective.
+Literate documentation validates the accuracy of the published
+instructions that guide users in invoking that behavior.</p><p>Tools that generate documentation from comments, type annotations,
+or OpenAPI specifications describe interfaces and structural
+contracts.
+Literate documentation verifies procedures, ensuring that installation
+steps, commands, configurations, and multi-step workflows execute
+and produce the declared results.</p><p>Acceptance tests may confirm that a system works.
+Literate documentation ensures that the documented path to making it
+work remains correct, reproducible, and release-gated.</p><p>In sum, literate documentation complements existing practices
+by extending enforcement from code and interfaces to the user-facing
+procedures that describe how the system is actually used.</p></details><h1 id=what-is-possible-today class="relative group">What is possible today? <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#what-is-possible-today aria-label=Anchor>#</a></span></h1><p>When we explored these ideas at Blocky, much of what we built was custom, which
+left me wondering whether literate documentation is achievable today using open
+source tooling.
+So, I went out to piece together an open source literate documentation tech
+stack.
+I found that while much of the literate documentation functionality is supported
+across various projects, and in some cases very well, important functionality
+gaps remain within the core literate documentation concepts.</p><h2 id=co-located-prose-and-executable-artifacts class="relative group">Co-located prose and executable artifacts <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#co-located-prose-and-executable-artifacts aria-label=Anchor>#</a></span></h2><p>While <a href=https://spec.commonmark.org/0.31.2/ target=_blank rel=noreferrer>Markdown</a> lacks native support for
+literate programming, it provides two primitives and one property that I think
+make it well-suited for literate documentation.
+First, <a href=https://spec.commonmark.org/0.31.2/#fenced-code-blocks target=_blank rel=noreferrer>fenced code blocks</a></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl><span class=s>```lang
+</span></span></span><span class=line><span class=cl>code
+</span></span><span class=line><span class=cl><span class=s>```</span>
+</span></span></code></pre></div><p>allow interspersing of text and code.
+Although code blocks alone do not implement literate programming, their
+<a href=https://spec.commonmark.org/0.31.2/#info-string target=_blank rel=noreferrer>info strings</a>
+allow language-aware code rendering.
+Second, <a href=https://spec.commonmark.org/0.31.2/#html-blocks target=_blank rel=noreferrer>HTML blocks</a> in
+Markdown allow for multiline HTML comments</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>&lt;!-- 
+</span></span><span class=line><span class=cl>multiline
+</span></span><span class=line><span class=cl>comment 
+</span></span><span class=line><span class=cl>--&gt;
+</span></span></code></pre></div><p>that can &ldquo;hide&rdquo; information from a Markdown renderer.</p><p>Finally, Markdown is simple.
+Unlike
+<a href=https://docs.asciidoctor.org/asciidoc/latest/ target=_blank rel=noreferrer>AsciiDoc</a>,
+<a href=https://docutils.sourceforge.io/rst.html target=_blank rel=noreferrer>reStructuredText</a>,
+or <a href=https://latex-project.org/help/documentation/source2e.pdf target=_blank rel=noreferrer>LaTeX</a>,
+which may be familiar to technical writers, Markdown remains accessible to
+engineers and readable in its raw form without rendering.
+As a result, it remains the lingua franca for engineering and non-engineering
+documenters across a wide range of workflows.</p><h2 id=build-time-execution-and-output-capture class="relative group">Build-time execution and output capture <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#build-time-execution-and-output-capture aria-label=Anchor>#</a></span></h2><p>With Markdown as the cornerstone markup layer, the next question is execution.
+While a
+<a href=https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop target=_blank rel=noreferrer>read–eval–print loop (REPL)</a>
+is sufficient for literate programming,
+literate documentation requires shell access to describe installation and
+configuration procedures, as well as software invocation examples.</p><h3 id=executable-shell class="relative group">Executable shell <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#executable-shell aria-label=Anchor>#</a></span></h3><p>Several projects
+(<a href=http://www.chriswarbo.net/git/panpipe/ target=_blank rel=noreferrer>PanPipe</a>,
+<a href=http://www.chriswarbo.net/git/panhandle/ target=_blank rel=noreferrer>PanHandle</a>,
+<a href=https://docs.enola.dev/use/execmd/ target=_blank rel=noreferrer>ExecMD</a>,
+<a href=https://github.com/zombocom/rundoc target=_blank rel=noreferrer>RunDOC</a>,
+<a href=https://github.com/khalidx/runbook target=_blank rel=noreferrer>runbook</a>,
+<a href=https://github.com/eclecticiq/rundoc target=_blank rel=noreferrer>rundoc</a>,
+<a href=https://github.com/earldouglas/codedown target=_blank rel=noreferrer>Codedown</a>,
+<a href=https://github.com/jonschlinkert/gfm-code-blocks target=_blank rel=noreferrer>gfm-code-blocks</a>,
+<a href=https://codeberg.org/mhwombat/run-code-inline target=_blank rel=noreferrer>run-code-inline</a>)
+support executable shell blocks in Markdown.
+The one that I think solves many problems well is
+<a href=https://github.com/zimbatm/mdsh target=_blank rel=noreferrer><code>mdsh</code></a>.
+For example, to flag a <code>bash</code> &ldquo;hello, world&rdquo; <code>echo</code> command for <code>mdsh</code>
+evaluation, we can put it in a fenced code block</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>``<span class=sb>`bash &gt; text $
+</span></span></span><span class=line><span class=cl><span class=sb>echo &#34;hello, world&#34;
+</span></span></span><span class=line><span class=cl><span class=sb>`</span>``
+</span></span></code></pre></div><p>The info string <code>bash > text $</code> tells a Markdown renderer to render the code
+block with <code>bash</code> syntax highlighting.
+A renderer, however, will ignore the <code>> text $</code> portion of the info string that
+tells <code>mdsh</code> to execute the commands after <code>$</code> with <code>bash</code> and wrap the output
+in a <code>text</code> fenced code block</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>&lt;!-- BEGIN mdsh --&gt;
+</span></span><span class=line><span class=cl><span class=s>```text
+</span></span></span><span class=line><span class=cl>hello, world
+</span></span><span class=line><span class=cl><span class=s>```</span>
+</span></span><span class=line><span class=cl>&lt;!-- END mdsh --&gt;
+</span></span></code></pre></div><p>The <code>BEGIN/END mdsh</code> markers in HTML comments are invisible in the rendered
+page, but act as structural fences to facilitate <code>mdsh</code> idempotency.
+The reader sees the rendered <code>bash</code> code and <code>text</code> blocks</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;hello, world&#34;</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>hello, world
+</span></span></code></pre></div><p>The output capture model of <code>mdsh</code> is also nice for developers, who can see both
+the command and its output in the same file as they work on it, or view it as a
+part of a pull request diff.</p><p><a href=https://docs.enola.dev/use/execmd/ target=_blank rel=noreferrer>ExecMD</a> can also run in place to add the
+output to the same file, but does so within the same code block</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl><span class=s>```bash
+</span></span></span><span class=line><span class=cl>$ <span class=nb>echo</span> <span class=s2>&#34;hello, world&#34;</span>
+</span></span><span class=line><span class=cl>hello, world
+</span></span><span class=line><span class=cl><span class=s>```</span>
+</span></span></code></pre></div><p>which doesn&rsquo;t let the writer control the formatting language of the output, for
+example, when the bash command returns a JSON string.
+Other tools generate an output file by either replacing the <code>bash</code> code block in
+the output (<a href=http://www.chriswarbo.net/git/panpipe/ target=_blank rel=noreferrer>PanPipe</a>), or by adding a
+separate output code block.</p><h4 id=transitional-text class="relative group">Transitional text <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#transitional-text aria-label=Anchor>#</a></span></h4><p>To facilitate a continuous narrative, Blocky&rsquo;s documentation allowed developers
+to define transitional text between the command and its output.
+I <a href=https://github.com/zimbatm/mdsh/pull/100 target=_blank rel=noreferrer>extended</a>
+<code>mdsh</code> with optional transitional text specified after <code>::</code>, as in</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>``<span class=sb>`bash &gt; text $ :: outputs
+</span></span></span><span class=line><span class=cl><span class=sb>echo &#34;hello, world&#34;
+</span></span></span><span class=line><span class=cl><span class=sb>`</span>`<span class=sb>`
+</span></span></span><span class=line><span class=cl><span class=sb>
+</span></span></span><span class=line><span class=cl><span class=sb>&lt;!-- BEGIN mdsh --&gt;
+</span></span></span><span class=line><span class=cl><span class=sb>outputs
+</span></span></span><span class=line><span class=cl><span class=sb>
+</span></span></span><span class=line><span class=cl><span class=sb>`</span>`<span class=sb>`text
+</span></span></span><span class=line><span class=cl><span class=sb>hello, world
+</span></span></span><span class=line><span class=cl><span class=sb>`</span>``
+</span></span><span class=line><span class=cl>&lt;!-- END mdsh --&gt;
+</span></span></code></pre></div><p><a href=https://github.com/zombocom/rundoc target=_blank rel=noreferrer>RunDOC</a> allows writers to add text before,
+or inside the output code block, though I find its syntax for doing so
+convoluted.</p><h4 id=suppressing-command-rendering class="relative group">Suppressing command rendering <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#suppressing-command-rendering aria-label=Anchor>#</a></span></h4><p>In some cases, only the output should be rendered.
+<code>mdsh</code> supports this as well by executing commands embedded in an HTML comment</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>&lt;!-- &gt; text $ 
+</span></span><span class=line><span class=cl>echo &#34;only output&#34; 
+</span></span><span class=line><span class=cl>--&gt;
+</span></span></code></pre></div><p><a href=http://www.chriswarbo.net/git/panhandle/ target=_blank rel=noreferrer>PanHandle</a>
+can also suppress command rendering though with much more effort.</p><h4 id=suppressing-output-rendering class="relative group">Suppressing output rendering <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#suppressing-output-rendering aria-label=Anchor>#</a></span></h4><p>An important functionality for me that&rsquo;s missing from <code>mdsh</code> is the ability to
+run the command, but suppress output.
+For example, I may want to direct the user to download a file with <code>curl</code> and
+have <code>mdsh</code> execute the command to make sure it works, but not to render the
+output of the command as a separate fenced code block.</p><p>Of course, I can suppress <code>curl</code> output with a flag</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>curl -s ...
+</span></span></code></pre></div><p>or redirect it</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>curl ... &gt; /dev/null 2&gt;<span class=p>&amp;</span><span class=m>1</span>
+</span></span></code></pre></div><p>though in both cases this extra syntax is distracting to the reader.</p><p>In developing Blocky&rsquo;s documentation we created a custom
+<a href=https://markdoc.dev/docs/tags target=_blank rel=noreferrer>Markdoc tag</a> to run <code>bash</code> commands</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>{% bash code=true output=false %}
+</span></span><span class=line><span class=cl>curl ...
+</span></span><span class=line><span class=cl>{% /bash %}
+</span></span></code></pre></div><p>with explicit options to render <code>bash</code> code and its captured output.
+<a href=https://github.com/zombocom/rundoc target=_blank rel=noreferrer>RunDOC</a> syntax also allows users to control
+the rendering of code and output independently,
+while <a href=http://www.chriswarbo.net/git/panpipe/ target=_blank rel=noreferrer>PanPipe</a> and
+<a href=https://codeberg.org/mhwombat/run-code-inline target=_blank rel=noreferrer>run-code-inline</a> have the means
+to suppress output.</p><h4 id=failures-and-debugging class="relative group">Failures and Debugging <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#failures-and-debugging aria-label=Anchor>#</a></span></h4><p>Occasionally, we want to document that a particular command fails.
+<a href=https://docs.enola.dev/use/execmd/ target=_blank rel=noreferrer>ExecMD</a> allows writers to start <code>bash</code>
+commands with <code>$?</code> and
+<a href=https://github.com/zombocom/rundoc target=_blank rel=noreferrer>RunDOC</a> with <code>fail.$</code> to indicate they will
+return a non-zero exit code.</p><p>If a command fails unexpectedly, it is useful to be able to re-run it
+selectively for a faster edit-compile-run (ECR) cycle.
+<a href=https://github.com/eclecticiq/rundoc target=_blank rel=noreferrer>rundoc</a> supports it by allowing
+writers to tag their <code>bash</code> commands</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>``<span class=sb>`bash#custom-branch#v2#test
+</span></span></span><span class=line><span class=cl><span class=sb>echo &#34;custom-tagged code block&#34;
+</span></span></span><span class=line><span class=cl><span class=sb>`</span>``
+</span></span></code></pre></div><p>and then invoking the tool only for particular tags</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>rundoc run -t bash#test input.md
+</span></span></code></pre></div><h4 id=stateful-procedures class="relative group">Stateful procedures <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#stateful-procedures aria-label=Anchor>#</a></span></h4><p>When I document a stateful procedure, such as software installation steps, I
+want to be able to replicate locally the side effects created by the documented
+commands on the user&rsquo;s machine.
+For example, I may direct the user to clone a repo</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git clone https://github.com/mwittie/go-hello-world &gt; /dev/null 2&gt;<span class=p>&amp;</span><span class=m>1</span>
+</span></span></code></pre></div><p>and then execute commands like</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>cd</span> go-hello-world <span class=o>&amp;&amp;</span> go build
+</span></span></code></pre></div><p>and</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>cd</span> go-hello-world <span class=o>&amp;&amp;</span> ./go-hello-world
+</span></span></code></pre></div><p>to check that it outputs</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>hello, world
+</span></span></code></pre></div><p>Again, the <code>cd go-hello-world</code> prefix for each command is distracting to the
+reader.
+It would be nice to tell the user to <code>cd go-hello-world</code> and then run the
+different
+commands without the prefix.
+<code>mdsh</code> allows us to specify a runtime directory at invocation, but not for each
+command within a Markdown file.
+At Blocky, we solved this by allowing writers to specify a <code>dir</code> attribute on
+the <code>bash</code> tag</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>{% bash id=&#34;file.md:394&#34; dir=&#34;go-hello-world&#34; code=true output=false %}
+</span></span><span class=line><span class=cl>go build
+</span></span><span class=line><span class=cl>{% /bash %}
+</span></span></code></pre></div><p>to execute the command from within the specified directory.</p><p><a href=https://docs.enola.dev/use/execmd/ target=_blank rel=noreferrer>ExecMD</a> has a more general solution</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>``<span class=sb>`bash INIT 
+</span></span></span><span class=line><span class=cl><span class=sb>$ CMD
+</span></span></span><span class=line><span class=cl><span class=sb>`</span>``
+</span></span></code></pre></div><p>where the <code>INIT</code> command is executed before the <code>CMD</code>, but only the <code>CMD</code> and
+the captured output of <code>CMD</code> are visible to the Markdown rendering engine.</p><h3 id=file-inclusions-and-extraction class="relative group">File inclusions and extraction <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#file-inclusions-and-extraction aria-label=Anchor>#</a></span></h3><p>Some documentation platforms support file inclusion and content extraction.
+For example, to pull out the <code>main</code> function from <code>go-hello-world/main.go</code> in
+Redocly, we can use the <code>code-snippet</code> tag</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>{% code-snippet file=&#34;go-hello-world/main.go&#34; from=5 to=9 language=&#34;go&#34; /%}
+</span></span></code></pre></div><p>The problem with this approach is that it requires documenters to manually
+update
+extraction line numbers, or at least verify them, when code in <code>main.go</code>
+changes.</p><p>AsciiDoc solves this problem by allowing content extraction by tags</p><pre tabindex=0><code class=language-adoc data-lang=adoc>[source,go]
+----
+include::go-hello-world/main.go[tag=example]
+----
+</code></pre><p>if they are added to the source code</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=c1>// tag::example[]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>func</span><span class=w> </span><span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;hello, world&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// end::example[]</span><span class=w>
+</span></span></span></code></pre></div><p>This approach is more stable from the documenter&rsquo;s perspective, but it
+pollutes the source code.</p><p>With executable <code>bash</code>, however, we can simply use <code>ast-grep</code> to pull out the
+relevant code</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ast-grep --pattern <span class=s1>&#39;func main() { $$$ }&#39;</span> --json<span class=o>=</span>stream go-hello-world/main.go <span class=se>\
+</span></span></span><span class=line><span class=cl><span class=p>|</span> jq -r <span class=s1>&#39;.text&#39;</span>
+</span></span></code></pre></div><p>which extracts</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>func</span><span class=w> </span><span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;hello, world&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><p>At Blocky, we developed <a href=https://github.com/blocky/pluck target=_blank rel=noreferrer>pluck</a> to make the
+process a bit easier, especially when we want to also extract the preceding doc
+comment for a type.</p><p>For example</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>go run github.com/blocky/pluck/cmd/pluck@v0.1.1 <span class=se>\
+</span></span></span><span class=line><span class=cl>--input go-hello-world/main.go --pick <span class=k>function</span>:main
+</span></span></code></pre></div><p>extracts</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=c1>// main prints &#34;hello, world&#34; to standard output.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>func</span><span class=w> </span><span class=nf>main</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;hello, world&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><h3 id=other-runtimes class="relative group">Other runtimes <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#other-runtimes aria-label=Anchor>#</a></span></h3><p>While <code>mdsh</code> supports <code>bash</code>, literate documentation would ideally support other
+scripting languages, such as Python.
+<code>mdsh</code> gives a nod to this idea and allows the execution of Python scripts, but
+requires them to include a shebang line.
+For example</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>printf</span> <span class=s2>&#34;#!/usr/bin/env python\nprint(&#39;hello, world&#39;)\n&#34;</span> &gt; test.py
+</span></span><span class=line><span class=cl>chmod u+x test.py
+</span></span><span class=line><span class=cl>./test.py
+</span></span></code></pre></div><p>outputs</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>hello, world
+</span></span></code></pre></div><p>Clearly, this is more cumbersome than simply invoking a Python code snippet like
+in Jupyter with</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>``<span class=sb>`python &gt; text
+</span></span></span><span class=line><span class=cl><span class=sb>print(&#34;hello, world&#34;)
+</span></span></span><span class=line><span class=cl><span class=sb>`</span>``
+</span></span></code></pre></div><p>though multiple commands would require recycling the runtime and managing per
+document runtime state correctly.
+Outside of <code>mdsh</code>, <a href=https://github.com/khalidx/runbook target=_blank rel=noreferrer>runbook</a> and
+<a href=https://github.com/eclecticiq/rundoc target=_blank rel=noreferrer>rundoc</a> already support several other
+runtimes including Bash, PowerShell, JavaScript, TypeScript, Python, and Go.</p><p>While we are on other runtimes, I would find it helpful if <code>mdsh</code> supported
+declarative diagramming runtimes, like Mermaid or D2, out of the box.
+For example</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>&lt;!-- mermaid &gt; svg
+</span></span><span class=line><span class=cl>graph LR;
+</span></span><span class=line><span class=cl>   A[Lemons]
+</span></span><span class=line><span class=cl>   B[Lemonade]
+</span></span><span class=line><span class=cl>   C[Profit]
+</span></span><span class=line><span class=cl>   A --&gt; B
+</span></span><span class=line><span class=cl>   B --&gt; C
+</span></span><span class=line><span class=cl>--&gt;
+</span></span></code></pre></div><p>could produce</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>&lt;!-- BEGIN mdsh --&gt;
+</span></span><span class=line><span class=cl>![<span class=nt>diagram</span>](<span class=na>diagram.svg</span>)
+</span></span><span class=line><span class=cl>&lt;!-- END mdsh --&gt;
+</span></span></code></pre></div><p>Yes, it is possible to render a Mermaid diagram on many Markdown platforms</p><div class=mermaid align=center>graph LR;
+A[Lemons]
+B[Lemonade]
+C[Profit]
+A --> B
+B --> C</div><p>but for using D2, or even Mermaid with custom rendering options, command line
+rendering would be preferable.</p><h2 id=shared-variables-across-text-and-execution-contexts class="relative group">Shared variables across text and execution contexts <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#shared-variables-across-text-and-execution-contexts aria-label=Anchor>#</a></span></h2><p>One of the things I really like about writing papers in LaTeX is how easy it is
+to keep terminology throughout a document consistent by using macros.
+Macros can be (ab)used to do a lot of things, but one of their most useful
+features is the support for variables.
+I can declare</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=k>\newcommand</span><span class=nb>{</span><span class=k>\fn</span><span class=nb>}{</span>foo()<span class=nb>}</span>
+</span></span></code></pre></div><p>so that every time I want to refer to the function in my paper I can just write
+<code>\fn</code>, which will be replaced with <code>foo()</code>.
+The powerful thing about the LaTeX macro system is that replacement doesn&rsquo;t
+just happen in text, but also in other environments.</p><p>Markdown lacks native support for variables; however, static site generators
+like
+<a href=https://gohugo.io/ target=_blank rel=noreferrer>Hugo</a>
+support <a href=https://gohugo.io/content-management/shortcodes/ target=_blank rel=noreferrer>shortcodes</a>
+or content frameworks like <a href=https://markdoc.dev/ target=_blank rel=noreferrer>Markdoc</a> support
+<a href=https://markdoc.dev/docs/tags target=_blank rel=noreferrer>tags</a>, which can replicate that functionality
+for replacement in text.
+<a href=https://github.com/khalidx/runbook target=_blank rel=noreferrer>runbook</a> allows templating with the
+handlebars syntax <code>{{ }}</code>,
+but the replacements are loaded only once at command invocation.</p><p>Where these approaches fall short is being able to replace variable values in
+executable environments, since tag substitution happens later in the rendering
+pipeline.</p><p><code>mdsh</code> supports setting of variables, but only for its <code>bash</code> runtime.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>``<span class=sb>`! foo=bar
+</span></span></span><span class=line><span class=cl><span class=sb>`</span>`<span class=sb>`
+</span></span></span><span class=line><span class=cl><span class=sb>
+</span></span></span><span class=line><span class=cl><span class=sb>`</span>`<span class=sb>`bash &gt; text $
+</span></span></span><span class=line><span class=cl><span class=sb>echo $foo
+</span></span></span><span class=line><span class=cl><span class=sb>`</span>`<span class=sb>`
+</span></span></span><span class=line><span class=cl><span class=sb>
+</span></span></span><span class=line><span class=cl><span class=sb>&lt;!-- BEGIN mdsh --&gt;
+</span></span></span><span class=line><span class=cl><span class=sb>`</span>`<span class=sb>`text
+</span></span></span><span class=line><span class=cl><span class=sb>bar
+</span></span></span><span class=line><span class=cl><span class=sb>`</span>``
+</span></span><span class=line><span class=cl>&lt;!-- END mdsh --&gt;
+</span></span></code></pre></div><p><code>mdsh</code> can also load variables from a <code>.env</code> file</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>``<span class=sb>`!&lt; .env
+</span></span></span><span class=line><span class=cl><span class=sb>`</span>``
+</span></span></code></pre></div><p>as can <a href=https://github.com/zombocom/rundoc target=_blank rel=noreferrer>RunDOC</a>.
+This creates the possibility of writing to the <code>.env</code> file in one command, and
+then loading it in another for subsequent access.
+<a href=http://www.chriswarbo.net/git/panhandle/ target=_blank rel=noreferrer>PanHandle</a> uses a similar approach
+for saving variables in Haskell files</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-md data-lang=md><span class=line><span class=cl>``<span class=sb>`{.haskell pipe=&#34;tee -a tangled.hs&#34;}
+</span></span></span><span class=line><span class=cl><span class=sb>foo = &#34;Hello&#34;
+</span></span></span><span class=line><span class=cl><span class=sb>
+</span></span></span><span class=line><span class=cl><span class=sb>`</span>`<span class=sb>`
+</span></span></span><span class=line><span class=cl><span class=sb>
+</span></span></span><span class=line><span class=cl><span class=sb>`</span>`<span class=sb>`{.haskell pipe=&#34;tee -a tangled.hs&#34;}
+</span></span></span><span class=line><span class=cl><span class=sb>bar = &#34;World&#34;
+</span></span></span><span class=line><span class=cl><span class=sb>
+</span></span></span><span class=line><span class=cl><span class=sb>`</span>`<span class=sb>`
+</span></span></span><span class=line><span class=cl><span class=sb>
+</span></span></span><span class=line><span class=cl><span class=sb>`</span>`<span class=sb>`{.haskell pipe=&#34;ghci -v0&#34;}
+</span></span></span><span class=line><span class=cl><span class=sb>:load tangled.hs
+</span></span></span><span class=line><span class=cl><span class=sb>print (foo ++ &#34; &#34; ++ bar)
+</span></span></span><span class=line><span class=cl><span class=sb>`</span>``
+</span></span></code></pre></div><p>Still, these approaches don&rsquo;t come close to the wide scope of LaTeX macros
+across text and embedded environments.
+For documentation to maintain internal consistency, literate documentation needs
+more mature macro definition and rendering support.</p><h2 id=assertion-of-expected-outputs class="relative group">Assertion of expected outputs <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#assertion-of-expected-outputs aria-label=Anchor>#</a></span></h2><p>Now that we have a way to document procedures via integrated narrative,
+executable commands, and captured output, we can treat these as claims about
+system behavior.
+In other words, the documentation can become a contract between the user and
+the system and a test suite of that contract.</p><p>The idea of linking implementation and expected behavior comes from
+<a href=https://docs.python.org/3/library/doctest.html target=_blank rel=noreferrer>Python doctests</a>.
+The documentation block for a <code>hello_world</code> function</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>def</span> <span class=nf>hello_world</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34;Print a greeting.
+</span></span></span><span class=line><span class=cl><span class=s2>
+</span></span></span><span class=line><span class=cl><span class=s2>    &gt;&gt;&gt; hello_world()
+</span></span></span><span class=line><span class=cl><span class=s2>    hello, world
+</span></span></span><span class=line><span class=cl><span class=s2>    &#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;hello, world&#34;</span><span class=p>)</span>
+</span></span></code></pre></div><p>contains an invocation test case after <code>>>></code> and the expected output on the next
+line.
+Invoking</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>python3 -m doctest hello.py -v
+</span></span></code></pre></div><p>runs file test cases and verifies their output:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>Trying:
+</span></span><span class=line><span class=cl>    hello_world()
+</span></span><span class=line><span class=cl>Expecting:
+</span></span><span class=line><span class=cl>    hello, world
+</span></span><span class=line><span class=cl>ok
+</span></span><span class=line><span class=cl>1 item had no tests:
+</span></span><span class=line><span class=cl>    hello
+</span></span><span class=line><span class=cl>1 item passed all tests:
+</span></span><span class=line><span class=cl>   1 test in hello.hello_world
+</span></span><span class=line><span class=cl>1 test in 2 items.
+</span></span><span class=line><span class=cl>1 passed.
+</span></span><span class=line><span class=cl>Test passed.
+</span></span></code></pre></div><p>The Go <code>testing</code> package offers a similar approach and allows
+<a href=https://pkg.go.dev/testing#hdr-Examples target=_blank rel=noreferrer>examples</a>
+that combine invocations and their expected output.
+Here <code>example_test.go</code> contains a package <code>Example()</code> test case</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>func</span><span class=w> </span><span class=nf>Example</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=nf>main</span><span class=p>()</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=c1>// Output: hello, world</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><p>which specifies that our earlier <code>main()</code> function should output <code>hello, world</code>.
+Running</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>cd</span> go-hello-world <span class=o>&amp;&amp;</span> go <span class=nb>test</span> --count<span class=o>=</span><span class=m>1</span> -run Example .
+</span></span></code></pre></div><p>outputs</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>ok  	github.com/mwittie/go-hello-world	0.003s
+</span></span></code></pre></div><p>The challenge is that neither of these approaches works well for shell-based
+procedures.
+At Blocky, our documentation described the use of our CLI tool, <code>bky-as</code>, and so
+we wanted to define our examples using shell commands, not code invocations.</p><p>We used the
+<a href=https://pkg.go.dev/github.com/rogpeppe/go-internal/testscript target=_blank rel=noreferrer><code>testscript</code></a>
+package to process <code>.txtar</code> files, which define input files, shell commands,
+and assertions over stdout.
+For example</p><pre tabindex=0><code class=language-txtar data-lang=txtar># [execute] call the bky-as CLI to attest a function call
+stdin fn-call.json
+exec bky-as attest-fn-call
+cp stdout out.json
+
+# [check] assert stderr and stdout expected values
+exec jq -r &#39;.transitive_attested_function_call.claims.output | @base64d&#39; out.json
+stdout &#39;hello, world&#39;
+</code></pre><p>specifies that invocations of the <code>bky-as attest-fn-call</code> command to run a
+function specified in <code>fn-call.json</code> should produce stdout output matching
+<code>hello, world</code>.</p><p>We used these tests as a contract between engineers and documenters.
+The engineers ensured the test suite was passing for every new
+<a href=https://github.com/blocky/attestation-service-examples/tags target=_blank rel=noreferrer>release</a> and the
+documenters used only the tested invocations in documentation examples.
+While this approach got us closer to making sure our documentation was
+functional in that it was based on tested procedures, two gaps remained.
+First, if the documenters needed to change the example, they needed to dive into
+the test suite, which wasn&rsquo;t as straightforward as simply updating Markdown
+<code>bash</code>
+code blocks and their output.
+Second, the documentation itself wasn&rsquo;t verified to match the test suite.
+A changed test suite example would not necessarily propagate to the
+documentation.
+As a result, the documentation itself wasn&rsquo;t yet an authoritative contract
+between us and our users.</p><p>Fortunately, <code>mdsh</code> offers a glimpse of a better approach.
+Invoking it with the <code>--frozen</code> flag will generate a <code>File modified</code> error if
+the newly captured output does not match the previous output already in a
+Markdown file.
+This check is useful in a CI pipeline to make sure that documented commands
+behave consistently across pull requests.
+A major shortcoming of <code>mdsh</code> is that an error does not tell me which <code>bash</code>
+command has the output mismatch, or what the mismatch is.</p><p>Another improvement I would like to see is the ability to pass captured command
+output as input to another command.
+In <code>txtar</code> I can copy <code>stdout</code> to a file and then validate it through separate
+commands.
+Redirecting command output would give developers more side-by-side visibility
+into discrepancies than under the <code>mdsh</code> model of reporting a mismatch with
+respect to a file that no longer exists.
+Redirecting also allows developers to explore not just equality, but
+equivalence, when the output of the system under test is not deterministic (e.g.
+timestamps, LLM output).</p><p>Complete assertion support in a literate documentation system would capture
+command output and compare it against declared validations with precise
+diagnostics when they fail.
+At that point, the documentation itself becomes a test suite with every test
+failure a contract violation that blocks release.</p><h2 id=reproducible-pinned-execution-environments class="relative group">Reproducible, pinned execution environments <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#reproducible-pinned-execution-environments aria-label=Anchor>#</a></span></h2><p>For documentation to function as a contract between developer and user, its
+behavior must be consistent on both of their machines.</p><p>Without control over the execution environment, consistent behavior is a
+Sisyphean task. Something as minor as different <code>curl</code> versions between Linux
+and macOS can silently break a documented procedure.</p><p>Attempting to account for these differences within the documentation itself,
+through setup or configuration steps, does not scale.
+It increases complexity for the reader and delays the path to a working example,
+while still leaving gaps in coverage.</p><p>As discussed in the <a href=#a-hopeful-interlude>hopeful interlude</a>, systems such as
+hosted notebooks achieve execution consistency by coupling the document with its
+runtime.
+The same principle can be applied to general documentation workflows through
+reproducible environment tooling.</p><p>At Blocky, we used <a href=https://nixos.org/ target=_blank rel=noreferrer>Nix</a> to define the execution environment
+declaratively. <a href=https://wiki.nixos.org/wiki/Flakes target=_blank rel=noreferrer>Nix Flakes</a> allow all
+required dependencies, including system packages, language runtimes, and
+tooling, to be specified in a single artifact with all versions pinned.</p><p>Documentation commands are executed inside this environment</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nix develop --ignore-environment --command make build
+</span></span></code></pre></div><p>where the <code>--ignore-environment</code> flag prevents inheritance of host environment
+variables and installed packages. Locally installed packages and environment
+variables are excluded, which enforces isolation.</p><p>Using Nix allowed us to enforce the same execution environment for developers,
+documenters, the CI pipeline, and users.
+In continuous integration, we integrated Nix using GitHub Actions with
+<code>cachix/install-nix-action</code> and <code>cachix/cachix-action</code> to ensure consistency and
+enable caching of dependencies to speed up subsequent builds.</p><p>For users, the workflow reduces to entering the defined environment</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>nix develop --ignore-environment
+</span></span></code></pre></div><p>where all documented commands execute as written, without additional setup,
+against a configuration that is tested and versioned alongside the
+documentation.</p><p>Alternative approaches such as Docker containers and virtual machines can
+provide isolation, but they differ in tradeoffs. Containers are widely used but
+can introduce variability through base images and layering semantics. Virtual
+machines provide stronger isolation but incur higher operational cost. Nix
+provides strict reproducibility with a comparatively lightweight model.</p><p>By distributing the environment definition, for example, through a
+<a href=flake.nix><code>flake.nix</code></a>
+file used for the commands in this post, the documentation includes not only
+instructions but also the context required to execute them. This removes a major
+source of drift.</p><p>The result is that a user entering the defined environment can follow the
+documented procedures exactly as written, against the same configuration that
+was tested when the documentation was released.</p><h1 id=conclusion class="relative group">Conclusion <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style=text-decoration-line:none!important href=#conclusion aria-label=Anchor>#</a></span></h1><p>Literate documentation treats documentation as an executable specification of
+system behavior rather than a descriptive artifact.</p><p>By co-locating prose and executable commands, running them during the build,
+asserting outputs, and constraining execution to a reproducible environment,
+documentation becomes subject to the same verification discipline as code.</p><p>This turns documentation into a mechanically enforced contract. Documented
+procedures are continuously executed and validated, and drift is surfaced as a
+build failure rather than discovered by users.</p><p>The result is alignment between documentation and actual system behavior. The
+path described is the path that has been executed and verified.</p><p>Literate documentation extends practices such as docs-as-code and testing by
+enforcing correctness at the level of user-facing procedures.</p></div></section><footer class="max-w-prose pt-8 print:hidden"></footer></article></main><div class="pointer-events-none absolute bottom-0 end-0 top-[100vh] w-12" id=to-top hidden=true><a href=#the-top class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 backdrop-blur hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400" aria-label="Scroll to top" title="Scroll to top">&uarr;</a></div><footer class="py-10 print:hidden"><div class="flex items-center justify-between"><div><p class="text-sm text-neutral-500 dark:text-neutral-400">&copy;
+2026
+Mike Wittie, PhD</p><p class="text-xs text-neutral-500 dark:text-neutral-400">Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href=https://gohugo.io/ target=_blank rel="noopener noreferrer">Hugo</a> & <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href=https://github.com/jpanther/congo target=_blank rel="noopener noreferrer">Congo</a></p></div><div class="flex flex-row items-center"></div></div></footer><div id=search-wrapper class="invisible fixed inset-0 z-50 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]" data-url=https://mwittie.io/><div id=search-modal class="top-20 mx-auto flex min-h-0 w-full max-w-3xl flex-col rounded-md border border-neutral-200 bg-neutral shadow-lg dark:border-neutral-700 dark:bg-neutral-800"><header class="relative z-10 flex flex-none items-center justify-between px-2"><form class="flex min-w-0 flex-auto items-center"><div class="flex h-8 w-8 items-center justify-center text-neutral-400"><span class="icon relative inline-block px-1 align-text-bottom"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7 405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9.0 208 0S0 93.1.0 208s93.1 208 208 208c48.3.0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9.0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7.0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7.0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg></span></div><input type=search id=search-query class="mx-1 flex h-12 flex-auto appearance-none bg-transparent focus:outline-dotted focus:outline-2 focus:outline-transparent" placeholder=Search tabindex=0></form><button id=close-search-button class="flex h-8 w-8 items-center justify-center text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400" title="Close (Esc)">
+<span class="icon relative inline-block px-1 align-text-bottom"><svg viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75.0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75.0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75.0-45.25s32.75-12.5 45.25.0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25.0s12.5 32.75.0 45.25l-105.4 105.4L310.6 361.4z"/></svg></span></button></header><section class="flex-auto overflow-auto px-2"><ul id=search-results></ul></section></div></div></div></body></html>
